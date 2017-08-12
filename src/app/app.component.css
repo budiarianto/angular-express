@@ -1,0 +1,20 @@
+:host {
+  margin: 0;
+  padding: 0;
+}
+:host ul {
+  margin: 0;
+  padding: 0;
+  background-color: #555;
+}
+:host ul li {
+  display: inline-block;
+  padding: 5px 15px;
+}
+:host ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+:host ul li.active a {
+  color: yellow;
+}

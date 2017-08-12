@@ -1,13 +1,16 @@
-var route = require('express').Router();
+(function() {
+    var app = require('express').Router();
+    var db = require('../config/db');
 
-route.use('/list', function(req, res) {
-    var list = [
-        { text: 'info 1 ' },
-        { text: 'info 2 ' },
-        { text: 'info 3 ' },
-        { text: 'info 4 ' },
-    ];
-    res.send(list);
-});
+    app.use('/list', (req, res) => {
+        var query = 'select id, name, company from contact limit ?, ?';
+        var param = [10, 25];
+        db.query(query, param, (err, rows) => {
+            console.log(req.session['value']);
+            res.send(rows);
+        });
+    });
 
-module.exports = route;
+
+    module.exports = app;
+}());

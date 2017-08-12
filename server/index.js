@@ -1,20 +1,13 @@
-var body_parser = require('body-parser');
-var compression = require('compression');
+var bodyParser = require('body-parser');
 var express = require('express');
-var path = require('path');
+var route = require('./route');
 var app = express();
 
-app.disable("x-powered-by");
-app.use(body_parser.json);
-app.use(compression());
-app.use(body_parser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-require('./route').route(app);
+route(app);
 
-app.get('/', function(req, res) {
-    res.send('Hello World!');
-});
-
-var server = app.listen(5000, function() {
-    console.log('Example app listening on port ', server.address().port)
+var server = app.listen(5000, () => {
+    console.log('Example app listening on port ', server.address().port);
 });

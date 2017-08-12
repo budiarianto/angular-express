@@ -1,7 +1,7 @@
 <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/page1">Page 01</a></li>
-    <li><a routerLink="/page2">Page 02</a></li>
-    <li><a routerLink="/page3">Page 03</a></li>
+    <li [ngClass]="{'active':model.active=='home'}"><a routerLink="/">Home</a></li>
+    <li [ngClass]="{'active':model.active=='page1'}"><a routerLink="/page1">Page 01</a></li>
+    <li [ngClass]="{'active':model.active=='page2'}"><a routerLink="/page2">Page 02</a></li>
+    <li [ngClass]="{'active':model.active=='page3'}"><a routerLink="/page3">Page 03</a></li>
 </ul>
 <router-outlet></router-outlet>

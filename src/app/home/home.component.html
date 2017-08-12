@@ -1,3 +1,19 @@
 <p>
     home works!
 </p>
+<h3>Area List</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Kode Area</th>
+            <th>Nama Area</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of model.list">
+            <td>{{i.kode_area}}</td>
+            <td>{{i.nama_area}}</td>
+        </tr>
+    </tbody>
+</table>

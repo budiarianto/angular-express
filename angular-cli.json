@@ -16,9 +16,12 @@
         "tsconfig": "tsconfig.app.json",
         "prefix": "app",
         "styles": [
-            "styles.css"
+            "libs/styles.css"
         ],
-        "scripts": [],
+        "scripts": [
+            "libs/jquery-2.2.4.min.js",
+            "libs/boogr.core.js"
+        ],
         "environmentSource": "environments/environment.ts",
         "environments": {
             "dev": "environments/environment.ts",
